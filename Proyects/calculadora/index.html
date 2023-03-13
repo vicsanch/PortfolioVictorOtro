@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/564/564429.png">
+    <script defer src="./javascript.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <section class="flex justify-center items-center bg-gray-50 h-screen gap-6">
+        <!-- Descomenta este fragmento de código para ver el flujo de las operaciones -->
+        <!-- <div class="bg-red-100 px-6 rounded-3xl py-4">
+            <p id="dom_operador1">Operador1 =></p>
+            <p id="dom_operador2">Operador2 =></p>
+            <p id="dom_operador">Operando =></p>
+        </div> -->
+
+        <div class="bg-white rounded-3xl px-5 py-6 relative">
+            <div class="absolute top-4 left-6 z-10">
+                <p class="text-xs text-gray-300">M: <span id="dom_memoria" class="text-gray-400/70"></span></p>
+            </div>
+            <!-- PANTALLA -->
+            <div id="calculadora" class="w-[290px] h-36 flex flex-col items-end justify-end pb-3 overflow-hidden">
+                <!-- HISTORIAL -->
+                <div class="text-gray-400 relative h-full w-full flex flex-col items-end">
+                    <div class="bg-gradient-to-b from-white top-0 absolute w-full h-10"></div>
+                    <div id="dom_historial" class="w-[320px] h-[76px] flex flex-col justify-end items-end overflow-hidden"></div>
+                </div>
+                <!-- RESULTADO -->
+                <div class="text-end text-3xl pt-2">
+                    <p id="pantalla" class="font-semibold text-zinc-800 whitespace-nowrap">0</p>
+                </div>
+            </div>
+            <div class="select-none pl-2 pb-2">
+                <label for="cientifica" class="inline-flex relative items-center cursor-pointer">
+                    <input type="checkbox" value="" id="cientifica" class="sr-only peer">
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gray-600"></div>
+                    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Científica</span>
+                </label>
+            </div>
+            <!-- BOTONES -->
+            <div id="botones" class="grid grid-cols-4 text-xl gap-3">
+                <!-- FILA 1 -->
+                <button id="limpiar" class="bg-yellow-400 text-white px-1 py-4 rounded-full font-medium">CE</button>
+                <button id="memoria" class="bg-yellow-100 text-yellow-600 px-1 py-4 rounded-full">M</button>
+                <button id="porcentaje" class="bg-yellow-100 text-yellow-600 px-1 py-4 rounded-full">%</button>
+                <button id="log_natu" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full">log</button>
+                <button id="log_nepe" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full">ln</button>
+                <button id="dividir" class="bg-purple-100 text-purple-600 px-1 py-4 rounded-full">÷</button>
+                <!-- FILA 2 -->
+                <button id="cambiar" class="bg-yellow-100 text-yellow-600 px-1 py-4 rounded-full">+/-</button>
+                <button id="inversa" class="bg-yellow-100 text-yellow-600 px-1 py-4 rounded-full">1/x</button>
+                <button id="raiz" class="bg-yellow-100 text-yellow-600 px-1 py-4 rounded-full">√</button>
+                <button id="const_e" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full">e</button>
+                <button id="const_pi" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full">π</button>
+                <button id="multiplicar" class="bg-purple-100 text-purple-600 px-1 py-4 rounded-full">x</button>
+                <!-- FILA 3 -->
+                <button id="siete" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full">7</button>
+                <button id="ocho" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full">8</button>
+                <button id="nueve" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full">9</button>
+                <button id="factorial" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full">x!</button>
+                <button id="mod" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full">mod</button>
+                <button id="sumar" class="bg-purple-100 text-purple-600 px-1 py-4 rounded-full">+</button>
+                <!-- FILA 4 -->
+                <button id="cuatro" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full">4</button>
+                <button id="cinco" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full">5</button>
+                <button id="seis" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full">6</button>
+                <button id="rnd" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full">Rnd</button>
+                <button id="pot_dos" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full">2^a</button>
+                <button id="restar" class="bg-purple-100 text-purple-600 px-1 py-4 rounded-full">-</button>
+                <!-- FILA 5 -->
+                <button id="uno" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full">1</button>
+                <button id="dos" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full">2</button>
+                <button id="tres" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full">3</button>
+                <button id="pot_cualquier" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full">a^b</button>
+                <button id="coseno" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full">cos</button>
+                <!-- FILA 6 -->
+                <button id="punto" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full row-start-6">.</button>
+                <button id="cero" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full row-start-6">0</button>
+                <button id="borrar" class="shadow-md shadow-gray-200/60 bg-white text-zinc-600 px-1 py-4 rounded-full flex justify-center row-start-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.211-.211.498-.33.796-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-9.284c-.298 0-.585-.119-.796-.33z" />
+                    </svg>                     
+                </button>
+                <button id="seno" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full row-start-6">sen</button>
+                <button id="tangente" class="cientifica hidden bg-gray-100 text-gray-600 px-1 py-4 rounded-full row-start-6">tan</button>
+                <button id="darResultado" class="bg-purple-600 text-purple-50 px-1 py-4 rounded-full row-span-2 text-2xl">=</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Portfolio Víctor</title>
+</head>
+
+<body>
+    <!-- SECCION I N I C I O -->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">MAIN</a></li>
+                            <li><a href="#sobremi" onclick="seleccionar(this)">ABOUT</a></li>
+                            <li><a href="#skills" onclick="seleccionar(this)">SKILLS</a></li>
+                            <li><a href="#portfolio" onclick="seleccionar(this)">PROYECTS</a></li>
+                            <li><a href="#contacto" onclick="seleccionar(this)">CONTACT</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+
+                    <div class="redes">
+                        <a href="mailto:victorsc1989@gmail.com"><i class="fa-brands fa-google"></i></a>
+                        <a href="https://www.linkedin.com/in/víctor-sánchez-cánovas-bb059b24b"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/vicsanch"><i class="fa-brands fa-github"></i></a>    
+                    </div>
+                </div>
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">Welcome 👋</p>
+                <h2>I am <span>Víctor Sánchez</span>, Web Developer</h2>
+                <p class="descripcion">I am a passionate about technology and i'm currently start my practice period in NTTDATA.</p>
+                <a href="#portfolio">Go to Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION S O B R E M I -->
+    <section id="sobremi">
+        <div class="contenedor-foto">
+            <img src="img/fotolinkedin.PNG" style="border-radius: 2em";>
+        </div>
+        <div class="prueba">
+        <div class="sobremi">
+            <p class="titulo-seccion" style="color:#fff">About me</p>
+            <p>Web application developer located in Málaga. Recently graduated with desire to learn and</p>
+            <p>make a career in this sector. I characterize myself as a persevering, disciplined person who</p>
+            <p>is constantly learning to be as up to date as possible withthe latest developments and thus be</p>
+            <p> able to add the greatest possible value to my projects.</p>
+            <a href="./CV/CV_Victor_Sanchez_Canovas.pdf" download>Download CV</a>
+        </div>
+        </div>
+    </section>
+
+     <!-- SECCION PORTAFOLIO -->
+     <section id="portfolio">
+        <h3 class="titulo-seccion">Proyects</h3>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                 <a><img src="img/Captura5.PNG" alt=""></a>
+                <div class="info">
+                    <a class="boton" href="./Proyects/Arkanoid/index.html">Demo</a>
+                    <a class="boton2" href="https://github.com/vicsanch">Source Code</a>
+                    
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <a href="https://github.com"><img src="img/Captura2.PNG" alt=""></a>
+                <div class="info">
+                    <a class="boton" href="./Proyects/calculadora/index.html">Demo</a>
+                    <a class="boton2" href="https://github.com/vicsanch">Source Code</a>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <a><img src="img/Captura4.PNG" alt=""></a>
+                <div class="info">
+                    <a class="boton" href="./Proyects/EltiempoApp/index.html">Demo</a>
+                    <a class="boton2" href="https://github.com/vicsanch/EltiempoApp">Source code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- SECCION H A B I L I D A D E S -->
+    <div class="contenedor-skills" id="skills">
+        <h3>SKILLS</h3>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Html & Css</p>
+                <span class="porcentaje">90%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="html"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Javascript</p>
+                <span class="porcentaje">90%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="js"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Databases</p>
+                <span class="porcentaje">90%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="bd"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>PHP</p>
+                <span class="porcentaje">85%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="ps"></div>
+            </div>
+        </div>
+        
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>GIT</p>
+                <span class="porcentaje">85%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="ps2"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>LINUX</p>
+                <span class="porcentaje">90%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="ps3"></div>
+            </div>
+
+        </div>
+    </div>
+
+   
+
+    <!-- SECCTION C O N T A C T O -->
+    <section id="contacto">
+        <h3 class="titulo-seccion">Contact</h3>
+        <div class="contenedor-form">
+            <form action="">
+                <div class="fila mitad">
+                    <input type="text" placeholder="Name *" class="input-mitad">
+                    <input type="email" placeholder="Email" class="input-mitad">
+                </div>
+                <div class="fila">
+                    <input type="text" placeholder="Subjet" class="input-full">
+                </div>
+                <div class="fila">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" class="input-full"></textarea>
+                </div>
+
+                <input type="submit" value="Submit" class="btn-enviar">
+            </form>
+        </div>
+    </section>
+
+    <!-- SECCION FOOTER -->
+    <footer>
+            <div class="contenedor-form">
+                <div class="redes">
+                    <a  class="contact" href="mailto:victorsc1989@gmail.com"><i class="fa-brands fa-google"></i></a>
+                    <a class="contact" href="https://www.linkedin.com/in/víctor-sánchez-cánovas-bb059b24b"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="contact" href="https://github.com/vicsanch"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <p>All rights reserved - 2023</p>    
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>

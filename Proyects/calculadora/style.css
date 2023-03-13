@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    font-family: 'Poppins', sans-serif;
+}
+button {
+    transition: all 0.08s ease-in;
+}
+button:hover {
+    opacity: 80%;
+}
+button:active {
+    transform: translateY(4px);
+}

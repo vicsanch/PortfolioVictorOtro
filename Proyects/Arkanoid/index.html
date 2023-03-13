@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./script.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Juego 2D</title>
+</head>
+
+<body>
+    <div class="w-full min-h-screen">
+        <h1 class="text-4xl text-center mt-20 font-retro text-white">ARKANOID</h1>
+
+        <div class="flex items-center justify-center gap-20 mt-20">
+            <canvas id="myCanvas" width="480" height="320"></canvas>
+            <div class="bg-zinc-700/30 px-4 py-6 rounded-2xl backdrop-blur-lg text-white w-1/4">
+                <div class="flex gap-1 items-center pb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <h1 class="text-lg font-medium">Configuración</h1>
+                </div>
+                <div class="flex flex-col pb-2">
+                    <label for="speed" class="pl-1">Ajusta la velocidad</label>
+                    <input type="range" id="speed" name="speed"
+                            min="0" max="100" step="1" value="10" onchange="changeSpeed()">
+                </div>
+                <div class="flex gap-4">
+                    <div>
+                        <label for="random_color">Color aleatorio</label>
+                        <input id="random_color" type="checkbox" onclick="changeColor(this.checked)">
+                    </div>
+                    <div>
+                        <label for="random_shape">Forma aleatoria</label>
+                        <input id="random_shape" type="checkbox" onclick="changeShape(this.checked)">
+                    </div>
+                </div>
+                <div>
+                    <label for="incrementSpeed">Incremetar velocidad al tocar la base</label>
+                    <input id="incrementSpeed" type="checkbox" onclick="incSpeedOnTouch(this.checked)">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
