@@ -39,7 +39,7 @@
         
         #inicio .contenido header .contenido-header h1 {
             text-align: center;
-            color: #ff5080;
+            color: #fff;
         }
         
         #inicio .contenido header .contenido-header nav ul {
@@ -153,9 +153,7 @@
         #sobremi .contenedor-foto img {
             padding: 20px;
             border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+           
             
         }
         
@@ -185,6 +183,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .centrado{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 750px;
         }
         
         #sobremi .sobremi h2 {
