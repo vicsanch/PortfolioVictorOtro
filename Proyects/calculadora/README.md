@@ -2,7 +2,6 @@
 <p align="center">
   <img src="https://cdn-icons-png.flaticon.com/512/564/564429.png" width="150" >
   <h3 align="center" margin-top="-40">Calculadora</h3>
-  <h4 align="center"><a href="https://gonzalosalmeron.github.io/calculadoraJavascript/">Ver aquí</a></h4>
 </p>
 
 <br>
