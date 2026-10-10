@@ -12,6 +12,197 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>Portfolio Víctor</title>
+    <style>
+    /* SECCIÓN SKILLS */
+    #skills {
+        padding: 60px 8%;
+        background: #171719;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+    }
+
+    #skills .skills-header {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    #skills .skills-header h2 {
+        font-size: 30px;
+        margin: 0 0 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    #skills .skills-header p {
+        color: #b8b8c0;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    /* DISTRIBUCIÓN DE LAS TARJETAS */
+    #skills .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* TARJETA */
+    #skills .skill-card {
+        background: #222226;
+        border: 1px solid #38383f;
+        border-radius: 12px;
+        padding: 25px;
+        transition: transform 0.2s ease,
+                    border-color 0.2s ease;
+    }
+
+    #skills .skill-card:hover {
+        transform: translateY(-4px);
+        border-color: #00aaff;
+    }
+
+    #skills .skill-card h3 {
+        font-size: 18px;
+        margin: 0 0 22px;
+        line-height: 1.4;
+    }
+
+    /* TECNOLOGÍAS */
+    #skills .skill-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 15px;
+        color: #e5e5e9;
+        font-size: 15px;
+    }
+
+    #skills .skill-item img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    /* ICONOS SIN IMAGEN DISPONIBLE */
+    #skills .skill-icon-placeholder {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        background: #34343b;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    /* ADAPTACIÓN A MÓVILES */
+    @media (max-width: 650px) {
+        #skills {
+            padding: 45px 6%;
+        }
+
+        #skills .skills-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        #skills .skills-header h2 {
+            font-size: 26px;
+        }
+
+        #skills .skill-card {
+            padding: 22px;
+        }
+    }
+</style>
+
+<style>
+    /* SECCIÓN ABOUT */
+    #about {
+        background: #1d2226;
+        color: #fff;
+        padding: 60px 20px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    #about .about-container {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    #about .about-photo {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 30px;
+    }
+
+    #about h2 {
+        font-size: 34px;
+        font-weight: 500;
+        margin: 0 0 25px;
+        text-decoration: underline;
+        text-underline-offset: 7px;
+    }
+
+    #about .about-text {
+        color: #e5e7eb;
+        font-size: 18px;
+        line-height: 1.65;
+        text-align: left;
+        margin: 0 auto 30px;
+    }
+
+    #about .about-text p {
+        margin-bottom: 16px;
+    }
+
+    #about .cv-button {
+        display: inline-block;
+        padding: 12px 35px;
+        min-width: 210px;
+        border: 1px solid #fff;
+        border-radius: 30px;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.2s ease,
+                    color 0.2s ease;
+    }
+
+    #about .cv-button:hover {
+        background: #fff;
+        color: #1d2226;
+    }
+
+    @media (max-width: 600px) {
+        #about {
+            padding: 45px 22px;
+        }
+
+        #about .about-photo {
+            width: 170px;
+            height: 170px;
+        }
+
+        #about h2 {
+            font-size: 29px;
+        }
+
+        #about .about-text {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    }
+</style>
+
 </head>
 
 <body>
@@ -22,10 +213,10 @@
                 <div class="contenido-header">
                     <nav id="nav" class="">
                         <ul id="links">
-                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">MAIN</a></li>
-                            <li><a href="#sobremi" onclick="seleccionar(this)">ABOUT</a></li>
+                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">HOME</a></li>
+                            <li><a href="#about" onclick="seleccionar(this)">ABOUT</a></li>
                             <li><a href="#skills" onclick="seleccionar(this)">SKILLS</a></li>
-                            <li><a href="#portfolio" onclick="seleccionar(this)">PROYECTS</a></li>
+                            <li><a href="#portfolio" onclick="seleccionar(this)">PROJECTS</a></li>
                             <li><a href="#contacto" onclick="seleccionar(this)">CONTACT</a></li>
                         </ul>
                     </nav>
@@ -45,32 +236,60 @@
             </header>
             <div class="presentacion">
                 <p class="bienvenida">Welcome 👋</p>
-                <h2>I am <span>Víctor Sánchez</span>, Cloud Data Engineer</h2>
-                <p class="descripcion">CGI Partner</p>
-                <a href="#portfolio">Go to Proyects</a>
+                <h2>I am <span>Víctor Sánchez</span></h2>
+                <p class="descripcion">Data Platform Engineer</p>
+                <a href="#portfolio">Go to Projects</a>
             </div>
         </div>
     </section>
 
     <!-- SECCION S O B R E M I -->
-    <section id="sobremi">
-        <div class="contenedor-foto">
-            <img src="img/fotolinkedin.PNG" style="border-radius: 2em";>
+   <section id="about">
+    <div class="about-container">
+
+        <img
+            src="img/fotolinkedin.PNG"
+            alt="Professional portrait"
+            class="about-photo"
+        >
+
+        <h2>ABOUT ME</h2>
+
+        <div class="about-text">
+            <p>
+                Data Engineer with 4 years of experience
+                building and supporting data solutions in
+                enterprise environments across banking
+                and insurance.
+            </p>
+
+            <p>
+                Experienced in data integration, ETL
+                development, SQL, and cloud data platforms,
+                including Azure Databricks, PySpark, and
+                Azure Data Factory, alongside Oracle ODI
+                and data governance practices.
+            </p>
+
+            <p>
+                Focused on reliable data pipelines, data
+                quality, process optimization, and
+                production operations.
+            </p>
         </div>
-        <div class="prueba">
-        <div class="sobremi">
-            <p class="titulo-seccion" style="color:#fff">About me</p>
-            <div class="centrado">
-            <p>Data Engineer with over 3 years of experience specializing in the full data lifecycle in mission-critical corporate environments (Banking, Insurance, and Consumer Goods). Expert in Cloud Data Lakehouse architectures (Azure Databricks, PySpark, ADF) and hybrid environments (Oracle Data Integrator, SQL). I excel at combining data engineering with data governance, the DataOps/ITSM culture, and the optimization of high-performance processes.</p>
-            </div>
-            <a href="./CV/CV_Victor_Sanchez_Canovas.pdf" download>Download CV</a>
-        </div>
-        </div>
-    </section>
+
+        <a href="RUTA-DE-TU-CV.pdf"
+           class="cv-button"
+           download>
+            Download CV
+        </a>
+
+    </div>
+</section>
 
      <!-- SECCION PORTAFOLIO -->
      <section id="portfolio">
-        <h3 class="titulo-seccion">Proyects</h3>
+        <h3 class="titulo-seccion">Projects</h3>
         <div class="fila">
             <div class="proyecto">
                 <div class="overlay"></div>
@@ -93,75 +312,93 @@
     </section>
 
     
-    <!-- SECCION H A B I L I D A D E S -->
-    <div class="contenedor-skills" id="skills">
-        <h3>SKILLS</h3>
-        <div class="skill">
-            <div class="info">
-                <p> <span class="lista"> </span>Azure Databricks</p>
-                <span class="porcentaje">90%</span>
-            </div>
-
-            <div class="barra">
-                <div class="" id="html"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="info">
-                <p> <span class="lista"> </span>Azure Data Factory</p>
-                <span class="porcentaje">90%</span>
-            </div>
-
-            <div class="barra">
-                <div class="" id="js"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="info">
-                <p> <span class="lista"> </span>Azure DevOps (CI/CD)</p>
-                <span class="porcentaje">90%</span>
-            </div>
-
-            <div class="barra">
-                <div class="" id="bd"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="info">
-                <p> <span class="lista"> </span>Unity Catalog</p>
-                <span class="porcentaje">85%</span>
-            </div>
-
-            <div class="barra">
-                <div class="" id="ps"></div>
-            </div>
-        </div>
-        
-        <div class="skill">
-            <div class="info">
-                <p> <span class="lista"> </span>Power BI</p>
-                <span class="porcentaje">85%</span>
-            </div>
-
-            <div class="barra">
-                <div class="" id="ps2"></div>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="info">
-                <p> <span class="lista"> </span>AWS</p>
-                <span class="porcentaje">90%</span>
-            </div>
-
-            <div class="barra">
-                <div class="" id="ps3"></div>
-            </div>
-
-        </div>
+    <section id="skills">
+    <div class="skills-header">
+        <h2>Technical Skills</h2>
+        <p>Data Development Technologies and Tools</p>
     </div>
 
-   
+    <div class="skills-grid">
+
+        <!-- CLOUD PLATFORMS -->
+        <article class="skill-card">
+            <h3>Cloud Platforms</h3>
+
+            <div class="skill-item">
+                <span class="skill-icon-placeholder"
+                      aria-hidden="true">Az</span>
+                <span>Microsoft Azure</span>
+            </div>
+
+            
+            <div class="skill-item">
+                <span class="skill-icon-placeholder"
+                      aria-hidden="true">AWS</span>
+                <span>Amazon Web Services</span>
+            </div>
+
+        </article>
+
+        <!-- DATA PROCESSING -->
+        <article class="skill-card">
+            <h3>Data Processing &amp; Lakehouse</h3>
+
+            <div class="skill-item">
+                <img src="assets/icons/databricks.svg"
+                     alt="" width="28" height="28">
+                <span>Azure Databricks</span>
+            </div>
+
+            <div class="skill-item">
+                <span class="skill-icon-placeholder"
+                      aria-hidden="true">DF</span>
+                <span>Azure Data Factory</span>
+            </div>
+        </article>
+
+        <!-- DATA GOVERNANCE -->
+        <article class="skill-card">
+            <h3>Data Governance &amp; Storage</h3>
+
+            <div class="skill-item">
+                <span class="skill-icon-placeholder"
+                      aria-hidden="true">UC</span>
+                <span>Unity Catalog</span>
+            </div>
+
+            <div class="skill-item">
+                <span class="skill-icon-placeholder"
+                      aria-hidden="true">SQL</span>
+                <span>SQL &amp; Data Storage</span>
+            </div>
+
+            <div class="skill-item">
+                <span class="skill-icon-placeholder"
+                      aria-hidden="true">DL</span>
+                <span>Delta Lake</span>
+            </div>
+
+        </article>
+
+        <!-- DEVOPS & ANALYTICS -->
+        <article class="skill-card">
+            <h3>DevOps &amp; Analytics</h3>
+
+            <div class="skill-item">
+                <span class="skill-icon-placeholder"
+                      aria-hidden="true">Az</span>
+                <span>Azure DevOps</span>
+            </div>
+
+            <div class="skill-item">
+                <span class="skill-icon-placeholder"
+                      aria-hidden="true">BI</span>
+                <span>Power BI</span>
+            </div>
+        </article>
+
+    </div>
+</section>
 
     <!-- SECCTION C O N T A C T O -->
     <section id="contacto">
